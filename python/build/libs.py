@@ -104,6 +104,20 @@ liblame = AutotoolsProject(
     ],
 )
 
+libsamplerate = AutotoolsProject(
+    'https://github.com/libsndfile/libsamplerate/releases/download/0.2.2/libsamplerate-0.2.2.tar.xz',
+    '97c010fc25156c33cddc272c1935afab',
+    'lib/libsamplerate.a',
+    [
+        '--disable-shared', '--enable-static',
+
+        #Decrease binary size (remove unnecessary components)
+        '--disable-sndfile', '--disable-alsa',
+        '--disable-fftw',
+    ],
+    autogen=True,
+)
+
 libmodplug = AutotoolsProject(
     'https://downloads.sourceforge.net/modplug-xmms/libmodplug/0.8.9.0/libmodplug-0.8.9.0.tar.gz',
     '457ca5a6c179656d66c01505c0d95fafaead4329b9dbaa0f997d00a3508ad9de',

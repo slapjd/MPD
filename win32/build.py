@@ -100,6 +100,7 @@ thirdparty_libs = [
     liblame,
     libmodplug,
     libopenmpt,
+    libsamplerate,
     wildmidi,
     gme,
     ffmpeg,
